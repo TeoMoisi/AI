@@ -1,0 +1,35 @@
+DESCRIPTION:
+
+        Consider a system to control a sprinkler. The purpose of this system is to adjust the operating
+    time of the sprinkler (short, medium, long). The outside sensors give information about the air
+    temperature (very cold, cold, normal, warm, hot) and the humidity of the soil (dry, normal, wet). Compute
+    the necessary operating time of the sprinkler according to the input data.
+
+
+SOLUTION:
+
+    INPUT VARIABLES:
+
+        - T = Temperature:
+            * {verycold, cold, normal, warm, hot}
+            * {x | -30 <= x <= 35}
+
+        - H = Humidity:
+            * {dry, normal, wet}
+            * {x | 0 <= x <= 100}
+
+    OUTPUT:
+
+        - TIME (of the sprinkler):
+            * {short, medium ,long}
+
+    ALGORITHM:
+
+        - Mamdani model:
+            * consequence of rule: “output variable belongs to a fuzzy set”
+            * Result of evaluation is applied for the membership function of the consequence
+            * Example: if x is in A and y is in B, then z is in C
+
+        - Defuzzification:
+            * COA: Centroid Area
+            * estimation of COA by using a sample of n points (xi, i=1,2,..., n) of the resulted fuzzy set
